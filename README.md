@@ -5,7 +5,7 @@
 한양대학교 ERICA 캠퍼스 2022년 봄학기 선형대수 과목의 프로젝트 과제를 위해 제작하였습니다.
 
 ## Site
-<a href = "hangul_hill_cipher.springnote.blog">hangul_hill_cipher.springnote.blog</a>
+[링크](https://hangul_hill_cipher.springnote.blog/)
 
 ## How to use
 #### Key에 값을 입력하여 2X2 행렬을 만드세요
