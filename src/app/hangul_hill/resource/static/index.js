@@ -83,7 +83,7 @@ var main = {
         };
         $.ajax({
             type: 'POST',
-            url: "http://127.0.0.1:18000/api/v1/hill/encryption",
+            url: "/api/v1/hill/encryption",
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
@@ -115,7 +115,7 @@ var main = {
         };
         $.ajax({
             type: 'POST',
-            url: "http://127.0.0.1:18000/api/v1/hill/decryption",
+            url: "/api/v1/hill/decryption",
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
@@ -140,7 +140,7 @@ var main = {
     randomkey : function () {
         $.ajax({
             type: 'GET',
-            url: "http://127.0.0.1:18000/api/v1/hill/randomkey",
+            url: "/api/v1/hill/randomkey",
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
         }).done(function(res) {
