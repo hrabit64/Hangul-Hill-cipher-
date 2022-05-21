@@ -12,7 +12,4 @@ app = FastAPI(title = "Hangul Hill cipher",
 app.include_router(api_v1_route)
 app.include_router(index_route)
 include_exception(app)
-app.mount("/static", StaticFiles(directory="resource/static"), name="static")
-
-if __name__ == "__main__":
-    uvicorn.run(app, host='127.0.0.1', port=18000, log_level="debug")
+app.mount("/static", StaticFiles(directory="app/hangul_hill/resource/static"), name="static")
