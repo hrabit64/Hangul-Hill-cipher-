@@ -10,7 +10,7 @@ load_dotenv()
 
 def validation_string(target:str) -> bool:
     for c in target:
-        if not (os.environ["END"] >= ord(c) >= os.environ["BASE"]) or c != " ":
+        if not (int(os.environ["END"]) >= ord(c) >= int(os.environ["BASE"])) and c != " ":
             return False
     return True
 
