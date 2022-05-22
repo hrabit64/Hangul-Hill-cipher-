@@ -16,14 +16,15 @@ async def create_encryption(req: encryptionRequest):
     make plain text to cipher text using hill cipher.
     """
     key = np.array([[req.a, req.b], [req.c, req.d]])
+    plain_text = req.plain_text.strip().replace("\n"," ")
 
     if not validation_key(key):
         raise NotValidKeyError()
 
-    if not validation_string(req.plain_text):
+    if not validation_string(plain_text):
         raise NotValidTextError
 
-    return {"cipher_text": hill_encryption(key, req.plain_text)}
+    return {"cipher_text": hill_encryption(key, plain_text)}
 
 
 @hill_route.post("/decryption", response_model=decryptionResponse)
@@ -32,14 +33,15 @@ async def create_decryption(req: decryptionRequest):
     make cipher text to plain text using hill cipher.
     """
     key = np.array([[req.a, req.b], [req.c, req.d]])
+    cipher_text = req.cipher_text.strip().replace("\n", " ")
 
     if not validation_key(key):
         raise NotValidKeyError()
 
-    if not validation_string(req.cipher_text):
+    if not validation_string(cipher_text):
         raise NotValidTextError
 
-    return {"plain_text" : hill_decryption(key, req.cipher_text)}
+    return {"plain_text" : hill_decryption(key, cipher_text)}
 
 
 @hill_route.get("/randomkey", response_model=generateKeyResponse)

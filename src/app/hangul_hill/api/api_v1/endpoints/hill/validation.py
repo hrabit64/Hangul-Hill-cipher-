@@ -9,9 +9,9 @@ from app.hangul_hill.api.api_v1.endpoints.hill.cal import modular_multiplicative
 load_dotenv()
 
 def validation_string(target:str) -> bool:
-    if re.match('[^ 가-힣+]', target) is not None:
-        return False
-
+    for c in target:
+        if not (os.environ["END"] >= ord(c) >= os.environ["BASE"]) or c != " ":
+            return False
     return True
 
 
