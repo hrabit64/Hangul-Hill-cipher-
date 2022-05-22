@@ -39,3 +39,4 @@
 - python-dotenv==0.20.0
 - pydantic==1.9.0
 - uvicorn==0.17.6
+- jinja2==3.1.2
